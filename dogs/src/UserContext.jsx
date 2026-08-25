@@ -6,14 +6,14 @@ export const UserContext = createContext()
 
 
 export const UserStorage = ({children}) => {
-  const [data, setData] = useState(null);
+  const [data, setDat] = useState(null);
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
 
-    const  UserLogout= useCallback( async function () {
+    const UserLogout = useCallback( async function () {
     setData(null);
     setError(null);
     setLoading(false)
@@ -70,14 +70,18 @@ export const UserStorage = ({children}) => {
         setLoading(false)
       }
     }
+    else{
+      setLoading(false)
+    }
 }
 autoLogin()
-},[UserLogout])
+}, [])
 
 
 
   return (
-    <UserContext.Provider value={{userLogin, UserLogout, data, error, loading, login}}>
+    <UserContext.Provider 
+    value={{userLogin, UserLogout, data, error, loading, login}}>
         {children}
     </UserContext.Provider>
   )
