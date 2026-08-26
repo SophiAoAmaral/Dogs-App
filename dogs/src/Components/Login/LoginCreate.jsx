@@ -37,7 +37,7 @@ async function handleSubmit(e) {
         <Input label='Usuario' type='text' name='username' {...username}/>
         <Input label='Email' type='text' name='username' {...email}/>
         <Input label='Senha' type='password' name='username' {...password}/>
-        {loading ? (<Button disabled>Cadastrando...</Button>) : (<Button>Cadastrar</Button>)}
+        {loading ? (<Button disabled >Cadastrando...</Button>) : (<Button>Cadastrar</Button>)}
         <Error error={error}/>
       </form>
     </section>

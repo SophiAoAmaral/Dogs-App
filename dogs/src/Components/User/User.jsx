@@ -1,7 +1,20 @@
 import React from 'react'
+import { UserHeader } from './UserHeader'
+import { Route, Routes } from 'react-router-dom'
+import { Feed } from '../Feed/Feed'
+import { UserPhotoPost } from './UserPhotoPost'
+import { UserStats } from './UserStats'
 
 export const User = () => {
   return (
-    <div>User</div>
+    <section className='conatiner'>
+      <UserHeader/>
+      <Routes>
+        <Route path='/' element={<Feed/>}/>
+        <Route path='posta' element={<UserPhotoPost/>}/>
+        <Route path='estatisticas' element={<UserStats/>}/>
+      </Routes>
+      
+    </section>
   )
 }

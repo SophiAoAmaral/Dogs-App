@@ -6,7 +6,7 @@ export const UserContext = createContext()
 
 
 export const UserStorage = ({children}) => {
-  const [data, setDat] = useState(null);
+  const [data, setData] = useState(null);
   const [login, setLogin] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,7 +20,7 @@ export const UserStorage = ({children}) => {
     setLogin(false);
     window.localStorage.removeItem('token');
     navigate('/login')
-  }, [navigate])
+  }, [])
 
 
 
