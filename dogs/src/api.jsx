@@ -28,15 +28,28 @@ export function TOKEN_VALIDATE_POST(token){
 
 
 
-
-export function USER_GET(token){
+export function TOKEN_POST(body){
     return{
-        url: API_URL + '/api/user',
+        url: API_URL + '/jwt-auth/v1/token',
         options:{
-            method: 'GET',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body),
+        },
+    }
+}
+
+export function PHOTO_POST(formData, token){
+    return{
+        url: API_URL + '/api/photo',
+        options:{
+            method: 'POST',
             headers: {
                Authorization : 'Bearer ' + token
             },
+            body:formData
         },
     }
 }
@@ -52,6 +65,18 @@ export function USER_POST(body){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(body),
+        },
+    }
+}
+
+
+export function PHOTOS_GET({page, total, user}){
+    return{
+        url: `${API_URL}/api/photo/?_page=${page}&${total}&_user=${user}`,
+        options:{
+            method: 'GET',
+            cache: 'no-store'
+            
         },
     }
 }
