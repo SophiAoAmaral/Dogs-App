@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import Enviar from '../Assets/enviar.svg?react';
+import Enviar from '../../Assets/enviar.svg?react';
 import { useFetch } from '../Hooks/useFetch';
 import { COMENT_POST } from '../../api';
 import { Error } from '../Helper/Error';
-import styles from './PhotoComemntsForm.module.css'
+import styles from './PhotoCommentsForm.module.css';
 
 
 export const PhotoCommentsForm = ({id, setComments}) => {

@@ -16,7 +16,7 @@
     border-radius: .2rem;
     background: #eee;
     transition: 0.2s;
-}
+};
 
 .textarea:focus,
 .textarea:hover{
@@ -24,7 +24,7 @@
     border-color: #fb1;
     background: white;
     box-shadow: 0 0 0 3px #fea;
-}
+};
 
 .button{
     border: none;
@@ -34,11 +34,11 @@
     font-size: 1rem;
     padding: 0 1rem;
     overflow: hidden;
-}
+};
 
 
-.button:focus svg, 
-.button:hover svg{
+.button:focus svg path , 
+.button:hover svg path{
     fill: #fea;
     stroke: #fb1;
-}
+};
