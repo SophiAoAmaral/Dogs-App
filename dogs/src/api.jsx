@@ -83,7 +83,6 @@ export function PHOTO_GET(id) {
   };
 }
 
-
 export function COMENT_POST(id, body) {
   return {
     url: `${API_URL}/api/comment/${id}`,
