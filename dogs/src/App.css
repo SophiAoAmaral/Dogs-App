@@ -71,6 +71,10 @@ button, input{
 };
 
 
+.mainContainer{
+  margin-top: 4rem;
+}
+
 .animeLeft{
   opacity: 0;
   transform: translateX(-20px);
