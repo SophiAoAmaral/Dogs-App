@@ -1,7 +1,31 @@
 import React from 'react'
+import { Input } from '../Forms/Input'
+import { Button } from '../Forms/Button'
+import { useForm } from '../../Hooks/useForm'
+import { useFetch } from '../../Hooks/useFetch'
+import { PASSOWORD_LOST } from '../../api'
+import { Error } from '../Helper/Error'
 
 export const LoginPasswordLost = () => {
+  const login = useForm()
+  const {data, loading, error, request } = useFetch();
+ async function handleSubmit(e){
+    e.preventDefault();
+    if(login.validate()){
+    const {url, options} = PASSOWORD_LOST({login: login.value, url: window.location.href.replace('perdeu', 'resetar' )})
+    request(url, options)
+  }
+}
   return (
-    <div>LoginPasswordLost</div>
+    <section>
+      <h1 className='title'>Perdeu a senha?</h1>
+      {data ? <p style={{color: '#4c1'}}>{data}</p> : <form onSubmit={handleSubmit}> 
+        <Input label='Email/Usuário' type='text' name='login' {...login}/>
+        {loading ? <Button disabled>Enviando...</Button> : <Button>Enviar Email</Button>}
+        
+      </form>}
+      
+      <Error error={error}/>
+    </section>
   )
 }

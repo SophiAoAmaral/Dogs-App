@@ -27,9 +27,7 @@
   grid-row: 1/4;
 }
 
-.comments {
-  padding: 0 2rem;
-}
+
 
 @media (max-width: 64rem) {
   .photo {
@@ -88,4 +86,18 @@
   width: 2px;
   background: #333;
   margin-top: 5px;
+}
+
+.single.photo{
+  grid-template-columns: 1fr;
+  height: auto;
+}
+
+.single .img{
+  grid-row: 1;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+.single .details{
+  padding:1rem 0px 0px 0px;
 }
