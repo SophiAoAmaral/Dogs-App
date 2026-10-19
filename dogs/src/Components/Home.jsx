@@ -5,7 +5,7 @@ import { Head } from '../Components/Helper/Head'
 export const Home = () => {
   return (
     <div className='container mainContainer'>
-      <Head title="Fotos" description = ""/>
+      <Head title="Fotos" description ="Home do site Dogs"/>
       <Feed/>
     </div>
   )

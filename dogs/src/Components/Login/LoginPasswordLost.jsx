@@ -5,6 +5,7 @@ import { useForm } from '../../Hooks/useForm'
 import { useFetch } from '../../Hooks/useFetch'
 import { PASSOWORD_LOST } from '../../api'
 import { Error } from '../Helper/Error'
+import { Head } from '../Helper/Head'
 
 export const LoginPasswordLost = () => {
   const login = useForm()
@@ -18,6 +19,7 @@ export const LoginPasswordLost = () => {
 }
   return (
     <section>
+      <Head title='Perdeu a senha?'/>
       <h1 className='title'>Perdeu a senha?</h1>
       {data ? <p style={{color: '#4c1'}}>{data}</p> : <form onSubmit={handleSubmit}> 
         <Input label='Email/Usuário' type='text' name='login' {...login}/>
